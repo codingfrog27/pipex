@@ -6,18 +6,18 @@
 #    By: mde-cloe <mde-cloe@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/19 17:10:41 by mde-cloe      #+#    #+#                  #
-#    Updated: 2022/11/15 14:54:06 by mde-cloe      ########   odam.nl          #
+#    Updated: 2022/11/16 15:25:20 by mde-cloe      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-#General----------
+#-------General----------#
 
 NAME 			:= pipex
 CC				= gcc
 COMPIL_FLAGS	?= -Wall -Wextra -Werror -o $@
 LINKFLAGS 		?= -I include -I LIBFT
 
-#sources and objects -------------
+#-----sources-+-objects-----$
 
 SOURCEFILES	:= 	pipex.c
 
@@ -28,7 +28,7 @@ SOURCES	:=	$(addprefix $(SRC_DIR), $(SOURCEFILES))
 OBJS	:=	$(addprefix $(OBJ_DIR), $(OFILES))
 
 
-#-----------------targets---------------
+#-----------------targets---------------#
 
 all: $(NAME)
 
@@ -51,7 +51,13 @@ fclean: clean
 
 re: fclean all
 
-#colours---------------
+
+#-----------testing--------------#
+
+run: $(NAME)
+	./pipex
+
+#------------colours---------------#
 
 C_RED		= \x1b[38;2;255;0;0m
 C_LRED		= \x1b[38;2;255;128;128m

@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pipex.h                                            :+:    :+:            */
+/*   test.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/14 17:19:09 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/17 16:05:41 by mde-cloe      ########   odam.nl         */
+/*   Created: 2022/11/16 15:15:16 by mde-cloe      #+#    #+#                 */
+/*   Updated: 2022/11/16 15:16:55 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include <stdio.h>
 
-# include <sys/wait.h>
-# include <unistd.h>
-# include <stdio.h>
-# include "libft.h"
-
-#endif // !PIPEX_H
+int	main(void)
+{
+	printf("Test succeeded\n");
+	return (0);
+}
