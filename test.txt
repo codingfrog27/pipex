@@ -1,0 +1,10 @@
+total 64
+drwxr-xr-x  63 mde-cloe  piscine   2142 Nov 14 17:20 LIBFT
+-rw-r--r--   1 mde-cloe  piscine   2788 Nov 16 15:25 Makefile
+drwxr-xr-x   3 mde-cloe  piscine    102 Nov 15 14:55 include
+drwxr-xr-x   3 mde-cloe  piscine    102 Nov 23 21:09 objects
+-rwxr-xr-x   1 mde-cloe  piscine  17156 Nov 23 21:09 pipex
+drwxr-xr-x   3 mde-cloe  piscine    102 Nov 22 15:36 sources
+-rw-r--r--   1 mde-cloe  piscine    973 Nov 16 15:16 test.c
+-rw-r--r--   1 mde-cloe  piscine    556 Nov 23 21:09 test.txt
+prw-r--r--   1 mde-cloe  piscine      0 Nov 23 15:11 testpipe

@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 17:19:09 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/17 16:05:41 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/23 20:29:05 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include "libft.h"
+
+# include <fcntl.h>
 
 #endif // !PIPEX_H
