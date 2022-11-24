@@ -6,7 +6,7 @@
 #    By: mde-cloe <mde-cloe@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/13 18:00:17 by mde-cloe      #+#    #+#                  #
-#    Updated: 2022/11/09 14:52:05 by mde-cloe      ########   odam.nl          #
+#    Updated: 2022/11/24 18:46:15 by mde-cloe      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,8 @@ SRCS := ft_atoi.c \
 		get_next_line_bonus.c \
 		get_next_line_utils_bonus.c \
 		ft_print_map.c \
-		free_map.c
+		free_map.c \
+		error_exit.c
 
 OFILES := $(SRCS:.c=.o)
 
@@ -83,7 +84,7 @@ $(NAME): $(OFILES) | $(HFILE)
 
 $(OFILES): %.o: %.c
 	@$(CC) -c $(CFLAGS) $^
-#	@printf "$(BLUE)$@$(GREEN) (DONE) $(BLUE)\n"
+	@printf "$(BLUE)$@$(GREEN) (DONE) $(BLUE)\n"
 bonus:
 	make BONUSTIME=1
 clean:
