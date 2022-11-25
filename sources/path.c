@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/24 18:46:51 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/24 19:58:44 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/25 16:29:06 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ char	**find_path(char **envp)
 		if (ft_strncmp(envp[i], "PATH", 4) == 0)
 		{
 			if (ft_strlen(envp[i]) < 6)
-			{
 				error_exit("PATH is unset silly!");
-				path = ft_split(&envp[i][4], ':');
-				if (!path)
-					error_exit("malloc fail (go to jail)");
-				return (path);
-			}
+			path = ft_split(&envp[i][5], ':');
+			if (!path)
+				error_exit("malloc fail (go to jail)");
+			return (path);
 		}
 		i++;
 	}

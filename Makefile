@@ -6,7 +6,7 @@
 #    By: mde-cloe <mde-cloe@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/19 17:10:41 by mde-cloe      #+#    #+#                  #
-#    Updated: 2022/11/24 18:51:10 by mde-cloe      ########   odam.nl          #
+#    Updated: 2022/11/25 16:20:11 by mde-cloe      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME 			:= pipex
 CC				= gcc
-COMPIL_FLAGS	?= -Wall -Wextra  -o $@
+COMPIL_FLAGS	?= -Wall -Wextra -g -o $@
 #-Werror
 LINKFLAGS 		?= -I include -I LIBFT
 

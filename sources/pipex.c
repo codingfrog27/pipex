@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 17:18:56 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/24 19:57:54 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/25 16:29:22 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int	main(int argc, char **argv, char **envp)
 		dup2(infd, 1);
 		exectime(path, argv[2], envp);
 	}
+	void(argc);
 }
