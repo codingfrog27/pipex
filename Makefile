@@ -6,7 +6,7 @@
 #    By: mde-cloe <mde-cloe@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/19 17:10:41 by mde-cloe      #+#    #+#                  #
-#    Updated: 2022/11/25 16:20:11 by mde-cloe      ########   odam.nl          #
+#    Updated: 2022/11/27 14:33:03 by mde-cloe      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ re: fclean all
 #-----------testing--------------#
 
 run: $(NAME)
-	./pipex
+	./pipex hey.txt "cat" "wc -l" doei.txt
 
 #------------colours---------------#
 
