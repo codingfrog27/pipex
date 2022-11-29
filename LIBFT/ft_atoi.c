@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 18:00:40 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/09 15:03:07 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 17:42:02 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ long	ft_atoi(const char	*str)
 			isneg = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && result < INT_MAX && result > INT_MIN)
+	while (str[i] >= '0' && str[i] <= '9' && result < INT_MAX \
+			&& result > INT_MIN)
 	{
 		result = result * 10 + str[i] - '0';
 		i++;

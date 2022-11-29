@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 18:00:40 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/24 18:45:37 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 17:39:23 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
-long			ft_atoi(const char	*str);
+long		ft_atoi(const char	*str);
 char		*ft_strdup(const char	*s1);
 void		*ft_calloc(size_t	count, size_t	size);
 char		*ft_strnstr(const char	*haystack, const char

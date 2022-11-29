@@ -6,13 +6,13 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/24 18:46:51 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/27 13:54:00 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 16:05:10 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	**find_path(char **envp)
+char	**find_path(char **envp, char *cmd)
 {
 	int		i;
 	char	**path;
@@ -27,7 +27,7 @@ char	**find_path(char **envp)
 			path = ft_split(&envp[i][5], ':');
 			if (!path)
 				error_exit("malloc fail (go to jail)");
-			return (path);
+			return (cmd_2_path(path, cmd));
 		}
 		i++;
 	}
