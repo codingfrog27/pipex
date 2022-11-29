@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 18:00:40 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/29 17:39:23 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 20:28:57 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			ft_printf(const char *str, ...);
 char		*get_next_line(int fd);
 void		ft_print_map(char **map);
 void		free_map(char **map);
-void		error_exit(char *str);
+void		error_exit(char *str, int err_nbr);
 
 typedef struct s_list
 {
