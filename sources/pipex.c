@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/27 16:00:44 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/29 17:49:26 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 18:46:12 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	find_and_exec(char **cmd, char **envp)
 		error_exit("exec fail\n");
 	}
 	path = find_path(envp, *cmd);
+	if (!path)
+		error_exit("malloc fail\n");
 	while (path)
 	{
 		if (access(*path, F_OK | X_OK) == 0)
@@ -93,5 +95,5 @@ int	main(int argc, char **argv, char **envp)
 	close(pipe_fd[WRITE]);
 	waitpid(pid_1, &stat_loc, 0);
 	waitpid(pid_2, &stat_loc, 0);
-	return (errno);
+	exit(WEXITSTATUS(stat_loc));
 }

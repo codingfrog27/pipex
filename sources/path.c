@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/24 18:46:51 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/29 16:05:10 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 18:41:34 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char	**cmd_2_path(char **old_path, char *cmd)
 		i++;
 	}
 	proper_path[i] = NULL;
+	free(slash_cmd);
 	free(old_path);
 	return (proper_path);
 }
