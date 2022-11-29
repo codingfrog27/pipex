@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/27 16:00:44 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/29 20:47:07 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 21:26:16 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	baby_1(char **argv, char **envp, int *pipe_fd)
 
 	file_fd = open(argv[1], O_RDONLY);
 	if (file_fd == -1)
-		error_exit("can't open infile\n", errno);
+		error_exit("can't open infile\n", 1);
 	if (dup2(pipe_fd[WRITE], 1) == -1 || dup2(file_fd, 0) == -1)
-		error_exit("dup2 fail\n");
+		error_exit("dup2 fail\n", 1);
 	close(pipe_fd[READ]);
 	close(pipe_fd[WRITE]);
 	close(file_fd);
@@ -61,13 +61,23 @@ void	baby_2(char **argv, char **envp, int *pipe_fd)
 
 	file_fd = open(argv[4], O_WRONLY | O_TRUNC);
 	if (file_fd == -1)
-		error_exit("can't open infile\n", errno);
+		error_exit("can't open outfile\n", 1);
 	if (dup2(pipe_fd[READ], 0) == -1 || dup2(file_fd, 1) == -1)
-		error_exit("dup2 fail\n");
+		error_exit("dup2 fail\n", 1);
 	close(pipe_fd[WRITE]);
 	close(pipe_fd[READ]);
 	close(file_fd);
 	find_and_exec(&argv[3], envp);
+}
+
+static pid_t	safe_fork(void)
+{
+	pid_t	pid;
+
+	pid = fork();
+	if (pid == -1)
+		error_exit("fork failed\n", 2);
+	return (pid);
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -78,18 +88,14 @@ int	main(int argc, char **argv, char **envp)
 	int		stat_loc;
 
 	if (argc != 5)
-		error_exit("wrong nr of arguments\n");
+		error_exit("wrong nr of arguments\n", 1);
 	if (pipe(pipe_fd) == -1)
-		error_exit("pipe failed\n", errno);
-	pid_1 = fork();
-	if (pid_1 == -1)
-		error_exit("fork failed\n", errno);
-	else if (pid_1 == 0)
+		error_exit("pipe failed\n", 2);
+	pid_1 = safe_fork();
+	if (pid_1 == 0)
 		baby_1(argv, envp, pipe_fd);
-	pid_2 = fork();
-	if (pid_2 == -1)
-		error_exit("fork failed\n", errno);
-	else if (pid_2 == 0)
+	pid_2 = safe_fork();
+	if (pid_2 == 0)
 		baby_2(argv, envp, pipe_fd);
 	close(pipe_fd[READ]);
 	close(pipe_fd[WRITE]);
@@ -97,4 +103,5 @@ int	main(int argc, char **argv, char **envp)
 	waitpid(pid_2, &stat_loc, 0);
 	if (WIFEXITED(stat_loc))
 		exit(WEXITSTATUS(stat_loc));
+	return (0);
 }

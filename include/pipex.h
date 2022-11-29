@@ -6,7 +6,7 @@
 /*   By: mde-cloe <mde-cloe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 17:19:09 by mde-cloe      #+#    #+#                 */
-/*   Updated: 2022/11/29 17:45:34 by mde-cloe      ########   odam.nl         */
+/*   Updated: 2022/11/29 21:20:41 by mde-cloe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include "libft.h"
 # include <fcntl.h>
-# include <errno.h>
 
 # define READ 0
 # define WRITE 1
